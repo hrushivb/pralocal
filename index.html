@@ -1,0 +1,773 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+
+<head>
+    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+    <script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <!-- Custom styles for this template -->
+        
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!-- <link rel="icon" href="img/lightcommands.png"> -->
+</head>
+<style type="text/css">
+    body {
+        font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight: 300;
+        font-size: 17px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+    }
+
+    h1 {
+        font-weight: 300;
+        line-height: 1.15em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    a:link, a:visited {
+        color: #00aeff;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #208799;
+    }
+
+    b:link, b:visited {
+        color: #00aeff;
+        text-decoration: none;
+    }
+
+    b:hover {
+        color: #208799;
+    }
+
+    h1, h2, h3 {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 40px;
+        font-weight: 500;
+    }
+
+    h2 {
+        font-weight: 400;
+        margin: 16px 0px 4px 0px;
+    }
+
+    .paper-title {
+        padding: 16px 0px 16px 0px;
+    }
+
+    section {
+        margin: 32px 0px 32px 0px;
+        text-align: justify;
+        clear: both;
+    }
+
+    .col-5 {
+        width: 20%;
+        float: left;
+    }
+
+    .col-4 {
+        width: 25%;
+        float: left;
+    }
+
+    .col-3 {
+        width: 33%;
+        float: left;
+    }
+
+    .col-2 {
+        width: 50%;
+        float: left;
+    }
+
+    .col-1 {
+        width: 100%;
+        float: left;
+    }
+
+    .row, .author-row, .affil-row {
+        overflow: auto;
+    }
+
+    .author-row, .affil-row {
+        font-size: 26px;
+    }
+
+    .row {
+        margin: 16px 0px 16px 0px;
+    }
+
+    .authors {
+        font-size: 26px;
+    }
+
+    .affil-row {
+        margin-top: 16px;
+    }
+
+    .teaser {
+        max-width: 100%;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .screenshot {
+        width: 80%;
+        border: 1px solid #ddd;
+    }
+
+    .screenshot-el {
+        margin-bottom: 1px;
+    }
+
+    hr {
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #ddd;
+        margin: 0;
+    }
+
+    .material-icons {
+        vertical-align: -6px;
+    }
+
+    p {
+        line-height: 1.25em;
+    }
+
+    .caption {
+        font-size: 16px;
+        /*font-style: italic;*/
+        color: #666;
+        text-align: center;
+        margin-top: 4px;
+        margin-bottom: 10px;
+    }
+
+    video {
+        display: block;
+        margin: auto;
+    }
+
+    figure {
+        display: block;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #bibtex pre {
+        font-size: 13.5px;
+        background-color: #eee;
+        padding: 16px;
+    }
+
+    .blue {
+        color: #2c82c9;
+        font-weight: bold;
+    }
+
+    .orange {
+        color: #d35400;
+        font-weight: bold;
+    }
+
+    .flex-row {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    .table {
+	width:100%;
+	border:1px solid color-form-highlight;
+    }
+    
+    .table-header {
+    	display:flex;
+    	width:100%;
+    	background:rgb(32, 126, 181);
+    	padding:(half-spacing-unit * 1.5) 0;
+    }
+    
+    .table-row {
+    	display:flex;
+    	width:100%;
+    	padding:(half-spacing-unit * 1.5) 0;
+    
+    }
+    
+    .table-data, .header__item {
+    	flex: 1 1 20%;
+    	text-align:center;
+    }
+    
+    .header__item {
+    	text-transform:uppercase;
+    }
+
+    .paper-btn {
+        position: relative;
+        text-align: center;
+
+        display: inline-block;
+        margin: 8px;
+        padding: 8px 8px;
+
+        border-width: 0;
+        outline: none;
+        border-radius: 2px;
+
+        background-color: #48b64e;
+        color: white !important;
+        font-size: 20px;
+        width: 100px;
+        font-weight: 600;
+    }
+
+    .paper-btn-parent {
+        display: flex;
+        justify-content: center;
+        margin: 16px 0px;
+    }
+
+    .paper-btn:hover {
+        opacity: 0.85;
+    }
+
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .boxed {
+				padding: 0.5em 2em 2em 2em;
+				background-color: #F8F8F8;
+	
+				max-width: 90%;
+				margin: 0 auto !important; 
+				float: none !important; ;
+	}
+	.boxed_mini {
+				padding: 0.5em 0.5em 0.5em 0.5em;
+				max-width: 40%;
+				background-color: #ECF9FF;
+				
+	}
+
+    .venue {
+        /*color: #B6486F;*/
+        font-size: 30px;
+
+    }
+
+    .myButton_l {
+				display:inline-block;
+				cursor:pointer;
+				font-family: Montserrat,sans-serif;
+				font-weight: bold;
+				font-size:15px;
+				letter-spacing: 0.1em;
+				padding:10px 10px;
+				text-decoration:none;
+			}
+	.myButton {
+				 background-color:#6fc7ee;
+				-moz-border-radius:18px;
+				-webkit-border-radius:18px;
+				border-radius:18px;
+				display:inline-block;
+				cursor:pointer;
+				color:#ffffff;
+				font-family: Montserrat,sans-serif;
+				font-weight: bold;
+				font-size:25px;
+				letter-spacing: 0.1em;
+				padding:10px 50px;
+				text-decoration:none;
+			}
+	.myButton:hover {
+				background-color:#478fcc;
+				color:#ffffff;
+				
+			} 
+
+</style>
+
+<!-- End : Google Analytics Code-->
+<script type="text/javascript" src="../js/hidebib.js"></script>
+<!-- <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic'
+      rel='stylesheet' type='text/css'> -->
+<head>
+    <title>You Can’t See Me: Physical Removal Attacks on LiDAR-based Autonomous Vehicles Driving Frameworks</title>
+    <meta property="og:description" content="You Can’t See Me: Physical Removal Attacks on LiDAR-based Autonomous Vehicles Driving Frameworks"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <!-- <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@ArashVahdat">
+    <meta name="twitter:title" content="Diffusion Models for Adversarial Purification">
+    <meta name="twitter:description"
+          content="We propose <i>DiffPure</i> that uses diffusion models for adversarial purification.">
+    <meta name="twitter:image" content=""> -->
+</head>
+
+<body>
+<div class="flex-row">
+    <div class="paper-title">
+        <h1 style="color:rgb(71, 132, 216)"><strong>You Can’t See Me: Physical Removal Attacks on LiDAR-based Autonomous Vehicles Driving Frameworks</strong></h1>
+    </div>
+
+    <div id="authors">
+        <center>
+            <div class="author-row">
+                <div class="col-3 text-center"><span style="font-size:25px">Yulong Cao</span><sup>2</sup></div>
+                <div class="col-3 text-center"><span style="font-size:25px">S. Hrushikesh Bhupathiraju</span><sup>1</sup>
+                </div>
+                <div class="col-3 text-center"><span style="font-size:25px">Pirouz Naghavi</span><sup>1</sup></div>
+                <div class="col-3 text-center"><span style="font-size:25px">Takeshi Sugawara</span><sup>3</sup></div>
+                <div class="col-3 text-center"><span style="font-size:25px">Z. Morley Mao</span><sup>2</sup></div>
+                <div class="col-3 text-center"><span style="font-size:25px">Sara Rampazzi</span><sup>1</sup></div>
+            </div>
+            <br>
+            <div class="text-center mt-auto" style="width:100%;margin-top: 1.5em; margin-bottom: 1.5em; display:flex;justify-content:space-around;align-items:center; flex-wrap: wrap;">
+                <div><sup>1</sup> University of Florida<br>
+                    <br>
+                <a href="https://www.eng.ufl.edu/">
+                  <img width = "350px" src="img/uf-cjc-logo.png" alt="University of Florida logo" class="img-fluid" />
+              <div style = "height:10px"></div>
+                </a>
+                </div>
+                <div><sup>2</sup> University of Michigan<br>
+                    <br>
+                    <a href="https://www.cse.umich.edu">
+                      <img width = "350px" src="img/umich_logo.png" alt="University of Michigan logo" class="img-fluid" />
+                  <div style = "height:10px"></div>
+                    </a>
+                    </div>
+                <div><sup>3</sup> The University of Electro-Communications (Tokyo)<br>
+                <a href="https://www.uec.ac.jp/eng/">
+                  <img width="165px" src="img/uec_logo.png" alt="UEC logo" class="img-fluid" />
+            </a>
+            </div>
+                </div>
+            <!-- <center>
+                <br><br>
+                <table align=center width=800px>
+                    <tr>
+                        <td align=center width=300px>
+                            <center>
+                                <span style="font-size:15px"><sup>1</sup> University of Florida</span>
+                            </center>
+
+                        </td>
+                        <td align=center width=300px>
+                            <center>
+                                <span style="font-size:15px"><sup>2</sup> University of Michigan</span>
+                            </center>
+                        </td>
+                        <td align=center width=300px>
+                            <center>
+                                <span style="font-size:15px"><sup>3</sup> The University of Electro-Communications (Tokyo)</span>
+                            </center>
+                        </td>
+                    </tr>
+                </table>
+            </center>
+
+        </center> -->
+        
+    </div>
+
+    <section id="abstract"/>
+    <h2>Abstract</h2>
+    <hr>
+    <div class="flex-row">
+        <p>
+            <br>
+            Autonomous Vehicles (AVs) increasingly use LiDAR-based object detection systems to perceive other vehicles and pedestrians on the road. While existing attacks on LiDAR-based Autonomous Driving architectures focus on lowering the confidence score of AV object detection models to induce obstacle misdetection, our research discovers how to leverage laser-based spoofing techniques to selectively remove the LiDAR point cloud data of genuine obstacles at the sensor level before being used as input to the AV perception. The ablation of this critical LiDAR information causes Autonomous Driving obstacle detectors to fail to identify and locate obstacles and, consequently, induces AVs to make dangerous automatic driving decisions. 
+        </p>
+    </div>
+
+    <figure style="margin-top: 10px; margin-bottom: 10px;">
+        <center><img width="40%" src="./img/firstfigure.png" style="margin-bottom: 20px;"></center>
+    </figure>
+    <div class="flex-row">
+        <p>
+            In this work, we present a method invisible to the human eye that hides objects and deceives autonomous vehicles’ obstacle detectors by exploiting inherent automatic transformation and filtering processes of LiDAR sensor data integrated with autonomous driving frameworks. We call such attacks Physical Removal Attacks (PRA). We achieve 45 degree attack capability. We demonstrate the attack's effectiveness on AV perception models and evaluate its consequences on driving decisions using LGSVL. We finally show that the attack is feasible in a real-world scenario.         </p>
+    </div>
+    <p class="my-4">To appear in <a href="https://www.usenix.org/conference/usenixsecurity23">USENIX Security Symposium 2023<br><br></a></p>
+				
+						<center>			
+						<!-- <b href="https://arxiv.org/pdf/2006.11946.pdf" class="myButton">Read the Paper</b> -->
+						
+			
+			
+						<b href="#bibtex"  class=" myButton " data-toggle="collapse" role="button"><span class="material-icons"> insert_comment </span>
+					Cite <i class="fa fa-quote-right" aria-hidden="true"></i></b>
+						<div id="bibtex" style="margin-top: 1.5em;" class="collapse" align="left">
+							<pre style="white-space: pre">
+
+@inproceedings{cao2023youcan'tseeme,
+  title={You Can’t See Me: Physical Removal Attacks on LiDAR-based Autonomous Vehicles Driving Frameworks},
+  author={Yulong Cao and S. Hrushikesh Bhupathiraju and Pirouz Naghavi and Takeshi Sugawara and Z. Morley Mao and Sara Rampazzi},
+  booktitle={32nd {USENIX} Security Symposium ({USENIX} Security 23)},
+  year={2023}
+}
+</center>
+							</pre>
+						
+				</div>	
+    </section>
+
+    </section>
+
+    <section id="novelties"/>
+    <h2>Physical Removal Attack Overview</h2>
+    <hr>
+    <div class="flex-row">
+        <p>
+            <br>The Physical Removal Attack consists of injecting invisible echoes in close proximity (namely, below a certain distance threshold) in the LiDAR sensor to force the automatic discard of legitimate cloud points in the scene, such as the cloud points produced by genuine obstacles. The genuine cloud point removal is achieved by spoofing cloud points in a specific range between the LiDAR sensor enclosure and the object. 
+        </p>
+    </div>
+    <figure style="width: 100%">
+        <center><img width="45%" src="img/attack_overview.png"></center>
+        <!-- <p class="caption" style="margin-bottom: 24px;">
+            The first column shows adversarial examples produced by attacking attribute classifiers using
+            PGD &#120001<sub>&#8734</sub> (&#949=16/255). Our method purifies the adversarial examples by first diffusing 
+            them up to the timestep t=0.3, following the forward diffusion process, and then, it removes perturbations 
+            using the reverse generative SDE. The middle three columns show the intermediate results of solving the 
+            reverse SDE in DiffPure at different timesteps. We observe that the purified images at t=0 match the clean images (last column).
+        </p> -->
+    </figure>
+    </section>
+
+    <section id="outdoor"/>
+    <h2>Outdoor Attack Experiments</h2>
+    <hr>
+    <div class="flex-row">
+        <p>
+            <br>
+            In this experiment, we evaluate the Physical Removal Attack considering the following scenario: a pedestrian walking across in front of a stopped autonomous vehicle. The spoofer deployed 8m away from the LiDAR on the side of the road aiming to remove the walking pedestrian 4m in front of the LiDAR with the attack angle of 8 degrees. The LiDAR is placed on top of a vehicle to simulate the autonomous vehicle setup. The experiment settings are more thoroughly indicated below: <br>
+            &emsp;• Captured Traces Evaluation Platform <strong><a href="https://github.com/ApolloAuto/apollo/tree/v5.0.0">Apollo Baidu 5.0</a></strong> <br>
+            &emsp;• LiDAR <strong><a href="https://velodynelidar.com/products/puck/">VLP-16</a></strong> <br>
+            &emsp;• Scenario<br>
+            &emsp;&emsp;○ Spoofer is located 8m away from the AD vehicle<br>
+            &emsp;&emsp;○ Attack angle of 8 degrees<br>
+            &emsp;&emsp;○ Pedestrian walks forward and backward 4m in front of the AD vehicle equipped with the LiDAR<br>
+            &emsp;• Vehicle Information<br>
+            &emsp;&emsp;○ Vehicle model: <strong><a href="https://www.jeep.com/cherokee.html">Jeep Cherokee 2018</a></strong><br>
+            &emsp;&emsp;○ AD vehicle is stationary (parking lot)<br>
+            The following demo videos demonstrate the camera and LiDAR view of the experiment. The LiDAR point cloud renderings include the pedestrian walking.
+        </p>
+        <div class="col-3 text-center"><video  width="300" height="200" controls="controls"/>
+            <source src="vid/OutdoorCam.mp4" type="video/mp4"></video>
+            <div class="overlayText">
+                <p id="topText"><br><font size="-1">Camera view of the experiment with pedestrian walking in front of the victim vehicle. Spoofer located on the side of the road.</font></p>
+            </div>
+        </div>
+            <div class="col-3 text-center"><video  width="300" height="200" controls="controls"/>
+                <source src="vid/OutdoorLidarForward.mp4" type="video/mp4"></video>
+                <div class="overlayText">
+                    <p id="bottom"><br><font size="-1">Point cloud of the pedestrian walking in front of the victim vehicle.</p></font>
+                </div>
+            </div>
+        <div class="flex-row">
+            <br>
+            <br>
+            The image below shows how the obstacle point cloud is removed as a pedestrian walks through the attack region. The 3D point cloud (Left) with (bottom) and without (top) the attack. The point cloud in the figures on the left is rendered from a different point of view from the videos. (Right) The decimation of the genuine cloud points during the attack. When the pedestrian walks in the attack region (10 seconds) and leave (27 seconds) (red area) the pedestrian object cloud points detected by the sensor and related cluster generated by Autoware are reduced to zero.
+            <figure style="width: 100%">
+            <center><img style="padding-top: 2%" width="45%" src="img/movingPedDayAndNight.png"></center>
+        </figure>
+        </div>
+        
+    </div>
+
+        <!-- <div class="flex-row"> -->
+            <!-- <div style="width: 50%; box-sizing: border-box; padding: 10px; margin: auto;"> -->
+                <!-- <img class="screenshot" src="img/movingPedDayAndNight.png"> -->
+            <!-- </div> -->
+            <!-- <div style="width: 50%; height: 70% font-size: 20px;"> -->
+                <!-- <p>The 3D point cloud (Left) with (bottom) and without (top) the attack. The point cloud in the figures on the left is rendered from a different point of view from the videos. (Right) The decimation of the genuine cloud points during the attack. When the pedestrian walks in the attack region (10 seconds) and leave (27 seconds) (red area) the pedestrian object cloud points detected by the sensor and related cluster generated by Autoware are reduced to zero.</p> -->
+                               <!-- <p><i>* Work done during an internship at NVIDIA.</i></p> -->
+                <!-- <div><span class="material-icons"> description </span><a href="https://arxiv.org/abs/2205.07460"> arXiv version</a></div> -->
+<!--  -->
+        <!-- </div> -->
+        <!-- </div> -->
+
+
+
+</section>
+
+<section id="moving"/>
+<h2>Moving target experiment</h2>
+<hr>
+<div class="flex-row">
+    <p>
+        <br>
+        We conduct proof-of-concept Physical Removal Attacks on moving targets with the LiDAR placed on top of a robot and a vehicle. Though attacking moving targets introduces additional technical challenges, we demonstrate the feasibility of attacking a moving target with a tracking system.
+    </p>
+</div>
+<h3 class="card-subhead">Moving Robot Scenario</h3>
+<div class="flex-row">
+    <p>
+        This scenario demonstrates the Physical Removal Attack on a moving autonomous vehicle. In this demonstration, the LiDAR is on top of a robot programmed to move toward a pedestrian, which is initially located 5m away from the robot, and back to its starting point. The spoofer is 5m in front of the LiDAR as well, but it is shifted to one side to simulate the roadside attacker. The video below shows the LiDAR point cloud visualization on the right side and the camera recording of the attack on the left side. The experiment settings are more thoroughly indicated below:<br>
+        &emsp;• LiDAR <strong><a href="https://velodynelidar.com/products/puck/">VLP-16</a></strong><br>
+        &emsp;• Scenario<br>
+        &emsp;&emsp;○ Spoofer is deployed 5m away from the robot<br>
+        &emsp;&emsp;○ Pedestrian is initially 5m away from the LiDAR equipped robot<br>
+        &emsp;• Vehicle Information<br>
+        &emsp;&emsp;○ Robot model: <strong><a href="https://neatorobotics.com/">Neato Botvac D85 Robot</a></strong><br>
+        &emsp;&emsp;○ AD vehicle is moving 0.8m forward and 0.8m backward at full speed of 0.1 m/s<br>
+        &emsp;&emsp;○ Positioned inside a room<br>
+    </p>
+    <div class="col-2 text-center"><video  width="80%" height="80%" controls="controls"/>
+        <source src="vid/moving.mp4" type="video/mp4"></video>
+        <div class="overlayText">
+            <br>
+            <p id="topText"><font size="-1">Camera view and Lidar Point Cloud during the Physical Removal Attack.</font></p>
+        </div>
+    </div>
+        <div class="col-2 text-center">
+            <figure style="width: 100%">
+                <img width="80%" height="74%" src="img/moving_target.png">
+            </figure>
+            <div class="overlayText">
+                <br>
+                <p id="topText"><font size="-1">Removal percentage of the pedestrian over time for the Physical Removal Attack on the robot.</font></p>
+            </div>
+        </div>
+        <br>
+        <center>
+            <p>
+                <br>
+                The video above (right) shows the LiDAR point cloud visualization and the camera recording of the attack on the robot. The image (left) shows the removal percentage of the pedestrian over time for the Physical Removal Attack on the robot. The attack is conducted in two phases: (1) target moving towards the pedestrian; (2) target moving away from the pedestrian. 
+            </p>
+        </center>
+</div>
+<h3 class="card-subhead">Moving Vehicle Scenario</h3>
+<div class="flex-row">
+    <p>
+        This experiment aims to demonstrate the feasibility of attacking the AV in the real world with the proposed tracking system, where we drive a vehicle towards the obstacle from 5 m to 3 m ahead. We use a traffic cone as the target obstacle for safety concerns. The vehicle used in this demonstration moves at a speed of 5km/h with the cone obstacle distance ranging from 5-3m. The spoofer was positioned on the side of the car trajectory, behind the obstacle location. <br>
+    </p>
+    <div class="col-2 text-center"><video  width="100%" height="100%" controls="controls"/>
+        <source src="vid/sbs4.mp4" type="video/mp4"></video>
+    </div>
+    <div class="col-2 text-center" style="padding-top: 3%">
+        <figure style="width: 100%">
+            <br>
+            <img width="75%" height="90%" src="img/moving_target_car_4.PNG">
+        </figure>
+    </div>
+    <center>
+        <p>
+            <br>
+            <font size="-1">The above video (left) shows the tracking systems camera view and the corresponding point cloud generated due to the attack. The image (right) on the other hand shows the vehicle setup and the target cone obstacle along with how the obstacle point cloud looks like with and without the attack.</font>
+        </p>
+    </center>
+    <div class="flex-row">
+        <p>
+            <br>
+            Though it is more challenging to attack a moving target with a higher and less stable speed in the outdoor environment, we demonstrate that PRA achieves a similar success rate of 92.7% for removing over 90% of the target traffic cone. The point cloud traces of the experiment are available <strong><a href="https://osf.io/k6nf2/?view_only=a46b3c2b51434e49857c2cc0d4f5b587">here</a></strong> (PCAP format).
+        </p>
+    </div>
+
+<section id="simulation"/>
+<h2>LGSVL Simulation</h2>
+<hr>
+<div class="flex-row">
+    <p>
+        <br>
+        To demonstrate the consequences of the attack in AD settings, we select a state-of-the-art AD system simulator (Baidu Apollo) and conducted the Physical Removal Attack. To simulate the PRA, we modify the rendered LiDAR sensor data in a commercial level simulator LGSVL. Since the simulator’s API only allowed for 5-degree increments in the LiDAR data rendering. We observe AD vehicle behavior with attack angles of 5 and 10 degrees. To further reflect the distance constraints demonstrated in the physical experiments, we start the attack when the AV's distance to the obstacle is 10m, 20m, 30m, 40m, and 50m. In the simulation, we evaluate the attack with vehicles and pedestrians obstacles placed at 5 different positions on the road, which resulted in 100 different scenarios. The AV accelerates from a stationary position with a speed limit of 32.4 km/h. The simulation settings are more thoroughly indicated below:<br>
+        &emsp;• AD System <strong><a href="https://github.com/ApolloAuto/apollo/tree/v5.0.0">Apollo Baidu 5.0</a></strong><br>
+        &emsp;• Apollo Planning <strong><a href="https://github.com/lgsvl/apollo-5.0/blob/105f7fd19220dc4c04be1e075b1a5d932eaa2f3f/modules/planning/conf/planning.conf#L4">Configuration</a></strong>.<br>
+        &emsp;• Simulator Platform <strong><a href="https://www.svlsimulator.com/">LGSVL</a></strong><br>
+        &emsp;• Simulation Scenarios<br>
+        &emsp;&emsp;○ 2 attack angles - 5 and 10 degrees<br>
+        &emsp;&emsp;○ 2 obstacles - pedestrian and vehicle<br>
+        &emsp;&emsp;○ 5 different obstacle positions<br>
+        &emsp;&emsp;○ 5 different victim vehicle distances when attack starts - 10m, 20m, 30m, 40m, and 50m<br>
+        &emsp;&emsp;○ Map <strong><a href="https://content.lgsvlsimulator.com/maps/singlelaneroad/">Single Lane Road</a></strong><br>
+        &emsp;• AV information<br>
+        &emsp;&emsp;○ AV model: <strong><a href="https://content.lgsvlsimulator.com/vehicles/lincolnmkz2017/">Lincoln MKZ 2017</a></strong><br>
+        &emsp;&emsp;○ AD vehicle starts at 55m from the obstacle ( at 1m left to the center of the road)<br>
+        <br>
+        The video recordings of <strong><a href="https://osf.io/k6nf2/?view_only=b082716ccb4043b5870a6ddf29d23926">all the simulation scenarios</a></strong> are provided for additional reference. All the simulations start with the AV at 55m away from the target obstacle (namely, a pedestrian or another car). The following demo videos below show the simulations when there is no attack and when the attack starts at 30m from the obstacle positioned in the middle of the road with both 5 and 10 degrees attack angles.
+
+        <div class="col-3 text-center"><video  width="100%" height="100%" controls="controls"/>
+            <source src="vid/30mPed5d.mp4" type="video/mp4"></video>
+            <div class="overlayText">
+                <p id="topText"><br><font size="-1">Removal attack starting at 30m away from the pedestrian obstacle.</font></p>
+            </div>
+        </div>
+            <div class="col-3 text-center"><video  width="100%" height="100%" controls="controls"/>
+                <source src="vid/30mVeh5d.mp4" type="video/mp4"></video>
+                <div class="overlayText">
+                    <p id="topText"><br><font size="-1">Removal attack starting at 30m away from the vehicle obstacle.</font></p>
+                </div>
+            </div>
+    </p>
+</div>
+<br>
+<br>
+<div class="flex-row">
+    <p>
+        <br>
+        The above vedios demonstrate the attack simulation for pedestrian (left) and vehicle (rigth) obstacles at a 5° attack angle. The target pedestrian appears out of the attack region at 8m from the AV but the AV collide with the pedestrian at 26 km/h as it is not able to slow down. The target car appears out of the attack region at 17m from the AV and the AV collide with the vehicle at 16 km/h.
+    </p>
+</div>
+<br>
+<h3 class="card-subhead">Simulation results and observations</h3>
+<div class="flex-row">
+    <p>
+        We observe the change in trajectories of the AV at different attack start conditions, each corresponding to the percentage of time the obstacle is inside the attack region for its total trajectory time. Figures (b,) (c), (e), and (f) demonstrates that the proposed PRA attack can lead to severe consequences and endanger the victim AV (e.g., by colliding with obstacles on the road). Figures (a) and (d) show that, by starting the attack at different distances, the attacker can remove the target obstacles for different periods (based on the size of the obstacles and the attack angles). In Figures (b), (c), (e), and (f), we show that, though the obstacle is only removed in a limited amount of time, it will cause the AV to accelerate and collide with the obstacles. Without the attack, the victim AV is expected to accelerate to reach the maximum speed (32 km/h) at 46 meters, then uniformly decelerate and stop before reaching the obstacle. When the attack starts and the target obstacle is removed, the victim AV will accelerate to reach the maximum speed. The graphs also represent the expected AV stopping position in the no-attack scenario and the position of the obstacle (marked as AV collision).<br>
+        <br>
+    </p>
+    <div class="col-3 text-center"><img width="90%" height = "85%" src="img/TimeinAttack5d.png">
+        <div class="overlayText">
+            <p id="topText">(a)</p>
+        </div>
+    </div>
+    <div class="col-3 text-center"><img width="85%" src="img/TrajectoryVehicle5dF.png">
+        <div class="overlayText">
+            <p id="topText">(b)</p>
+        </div>
+    </div>
+    <div class="col-3 text-center"><img width="120%" src="img/TrajectoryPedestrian5dF.png">
+        <div class="overlayText">
+            <p id="topText">(c)</p>
+        </div>
+    </div>
+    <div class="col-3 text-center"><img img width="90%" height = "85%" src="img/TimeinAttack10d.png">
+        <div class="overlayText">
+            <p id="topText">(d)</p>
+        </div>
+    </div>
+    <div class="col-3 text-center"><img width="85%" src="img/TrajectoryVehicle10dF.png">
+        <div class="overlayText">
+            <p id="topText">(e)</p>
+        </div>
+    </div>
+    <div class="col-3 text-center"><img width="120%" src="img/TrajectoryPedestrian10dF.png">
+        <div class="overlayText">
+            <p id="topText">(f)</p>
+        </div>
+    </div>
+
+</section>
+
+<section id="fusion"/>
+<h2>Fusion Model Evaluation</h2>
+<hr>
+<div class="flex-row">
+    <p>
+        <br>
+        Several AD systems rely on camera-LiDAR-based fusion models for object detection, object localization, and tracking. Fusion helps compensate for the limitations of individual sensors and provides additional robustness to naive black-box attacks. We demonstrate that the Physical Removal Attack is robust against three state-of-the-art camera-LiDAR fusion models: Frustum-ConvNet (FC), ii) AVOD, and iii) Autoware Integrated-Semantic Level Fusion. <br>
+        &emsp;We use the detection rate as a metric to evaluate PRA on the three fusion models for each possible attack angle. Our evaluation considers two analyses. In the first analysis (DEF), the intersection-over-union (IOU) evaluation is performed on the default thresholds for each model (0.7 for cars and 0.5 for pedestrians in the case of AVOD and Frustum-ConvNet, and a 50% overlap in Autoware Integrated-Semantic Level Fusion). In the second analysis (AVE), the evaluation is performed for all the possible IOU threshold values over 3D bounding box predictions for each fusion model (0.1 - 0.9 for Frustum-ConvNet and AVOD, 10% to 90% for Autoware). The resulting detection drop rates for increasing attack angle are shown below.
+    </p>
+</div>
+    <figure style="margin-top: 10px; margin-bottom: 10px;">
+        <center><img width="40%" src="img/veh_table_fusion.PNG"></center>
+</figure>
+    <center>
+        <p>
+            <font size="-1">Vehicle object detection rates on fusion models at increasing attack angles.<br><br></font>
+        </p>
+    </center>
+    <figure style="margin-top: 10px; margin-bottom: 10px;">
+        <center><img width="40%" src="img/ped_table_fusion.png"></center>
+</figure>
+    <center>
+        <p>
+            <font size="-1">Pedestrian object detection rates on fusion models at increasing attack angles.</font>
+        </p>
+    </center>
+</section>
+
+
+<section id="multimode"/>
+<h2>Multimode Analysis</h2>
+<hr>
+
+
+<div class="flex-row">
+    <div style="width: 40%; box-sizing: border-box; padding: 10px; margin: auto; padding-left: 5%;">
+        <img width="70%" src="img/multimode_gif.gif">
+    </div>
+    <div style="width: 60%; font-size: 20px;">
+        <br>
+        <p>For the LiDAR Velodyne VLP-16, there are three different modes: strongest mode, dual mode, and last mode where different echoes are used for calculating the point cloud (e.g. strongest mode uses the echo with maximum intensity; last-mode uses the last returned echo while the dual-mode calculates both). We found that PRA can remove points for all three modes. Here below we show the attack's ability to completely remove target obstacles from the LiDAR perception. The PCAP files for Last Mode and Dual Mode are available as a reference here.<br>
+        &emsp;The figure shows the point cloud of the traffic cone obstacle removed by our removal attack (LiDAR Dual Mode enable). First, the attacker spoof the points between the real obstacle and the LiDAR. Then the injected points are moved below the MOT (Minimum Operational Threshold). When the points are spoofed with higher intensity the genuine point clouds from the obstacle are removed. 
+    
+        <!--                <p><i>* Work done during an internship at NVIDIA.</i></p>-->
+        <!-- <div><span class="material-icons"> description </span><a href="https://arxiv.org/abs/2205.07460"> arXiv version</a></div> -->
+
+</div>
+    
+</div>
+</section>
+
+    <!-- <section id="bibtex"> -->
+        <!-- <h2>Citation</h2> -->
+        <!-- <hr> -->
+        <!-- <pre><code>inproceedings{cao2022advdo, -->
+<!--  -->
+          <!-- title={AdvDO: Realistic Adversarial Attacks for Trajectory Prediction}, -->
+        <!--  -->
+          <!-- author={Yulong Cao, Chaowei Xiao, Anima Anankuda, Danfei Xu and Marco Pavone}, -->
+        <!--  -->
+          <!-- booktitle={European conference on computer vision (ECCV)}, -->
+        <!--  -->
+          <!-- year={2022}, -->
+        <!--  -->
+          <!-- organization={Springer} -->
+        <!--  -->
+        <!-- } -->
+<!-- }</code></pre> -->
+    <!-- </section> -->
+</div>
+
+<section id="Acknowledgments"/>
+<h2>Acknowledgments</h2>
+<hr>
+<div class="text-center mt-auto" style="width:100%;margin-top: 1.5em; margin-bottom: 1.5em; display:flex;justify-content:space-around;align-items:center; flex-wrap: wrap;">
+    <div>University of Florida<br>
+        <br>
+    <a href="https://www.eng.ufl.edu/">
+      <img width = "350px" src="img/uf-cjc-logo.png" alt="University of Florida logo" class="img-fluid" />
+  <div style = "height:10px"></div>
+    </a>
+    </div>
+    <div>University of Michigan<br>
+        <br>
+        <a href="https://www.cse.umich.edu">
+          <img width = "350px" src="img/umich_logo.png" alt="University of Michigan logo" class="img-fluid" />
+      <div style = "height:10px"></div>
+        </a>
+        </div>
+    <div> The University of Electro-Communications (Tokyo)<br>
+    <a href="https://www.uec.ac.jp/eng/">
+      <img width="165px" src="img/uec_logo.png" alt="UEC logo" class="img-fluid" />
+</a>
+</div>
+    </div>
+
+</body>
+</html>
